@@ -5,15 +5,19 @@ export default class News extends Component {
   render() {
    
     return (
-      <div>
-        this is a news 
+      <div className='container my-3'>
+        <h2>Aesthetic Newspapers</h2>
+        <div className="row">
+          <div className="col-md-4">
         <Newitem title="first title" description="first desc"></Newitem>
-        <Newitem></Newitem>
-        <Newitem></Newitem>
-        <Newitem></Newitem>
-        <Newitem></Newitem>
-        <Newitem></Newitem>
-    
+        </div>
+        <div className="col-md-4">
+        <Newitem title="first title" description="first desc"></Newitem>
+        </div>
+        <div className="col-md-4">
+        <Newitem title="first title" description="first desc"></Newitem>
+        </div>
+           </div>
       </div>
     )
   }
