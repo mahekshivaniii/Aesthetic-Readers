@@ -12,7 +12,7 @@ export default class News extends Component {
         "title": "News24 | Mike Procter, SA cricket legend and Proteas' first post-isolation coach, dies at 77",
         "description": "World cricketing great Mike Procter died in an Umhlanga private hospital on Saturday afternoon.",
         "url": "https://www.news24.com/sport/cricket/proteas/mike-procter-sa-cricket-legend-and-proteas-first-post-isolation-coach-dies-at-77-20240217",
-        "urlToImage": null,
+        "urlToImage": "https://cdn.24.co.za/files/Cms/General/d/10837/8d2eee4ec9cc469293a7bd95b035b0d2.jpg",
         "publishedAt": "2024-02-17T19:37:01",
         "content": "World cricketing great Mike Procter died in an Umhlanga private hospital on Saturday afternoon."
     },
@@ -58,16 +58,12 @@ export default class News extends Component {
       <div className='container my-3'>
         <h2>Aesthetic Newspapers</h2>
         <div className="row">
-          <div className="col-md-4">
-        <Newitem title="first title" description="first desc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"></Newitem>
-        </div>
-        <div className="col-md-4">
-        <Newitem title="first title" description="first desc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"></Newitem>
-        </div>
-        <div className="col-md-4">
-        <Newitem title="first title" description="first desc" imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"></Newitem>
-        </div>
-           </div>
+        {this.state.articles.map( (element) =>{        
+         return <div className="col-md-4" key={element.url}>
+           <Newitem title={element.title} description={element.description} imageUrl={element.urlToImage} newUrl={element.url}></Newitem>
+        </div>  
+          })}
+</div>
       </div>
     )
   }
