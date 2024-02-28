@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Newitem from './Newitem'
+import { wait } from '@testing-library/user-event/dist/utils'
 
 export default class News extends Component {
   articles =  [
@@ -51,6 +52,12 @@ export default class News extends Component {
           loading : false
 
     }
+  }
+  async componentDidMount(){
+    let url= "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=c8ae1b2a9168474a867134747ad1eb35"
+    let data = await fetch(url)
+    let parseData = await data.json()
+    this.setState({articles : parseData.articles})
   }
   render() {
    
